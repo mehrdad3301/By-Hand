@@ -1,7 +1,6 @@
-from mouse import MouseController
-from utils import Controller
-from volumn import VolumnControl
-
+from control.mouse import MouseController
+from control.utils import Controller
+from control.volumn import VolumnControl
 def main() : 
 
     controller = Controller() 
