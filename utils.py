@@ -2,12 +2,16 @@ import cv2
 import time 
 
 class Controller : 
+    wCam , hCam = 640 , 480
     def __init__(self) : 
         self.cap = cv2.VideoCapture(0) 
+        self.cap.set(3 , self.wCam)
+        self.cap.set(4 , self.hCam)
         self.fps = Fps() 
 
     def get_image(self) : 
         sec , self.img = self.cap.read() 
+        self.img = cv2.flip(self.img , 1)
         return self.img if sec else None 
 
     def show_image(self , militime = 1 , name = 'cam') : 
