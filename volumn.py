@@ -13,11 +13,11 @@ class VolumnControl :
 
 	def check_for_volumn(self, img) : 
 
-		img = self.detector.findHands(img , True) 
+		img = self.detector.findHands(img)
 		lm = self.detector.findPosition(img) 
 		
 		# check if hand was detected 
-		if len(lm) != 0 : 
+		if len(lm) != 0 :  
 			length = self.detector.findDistance(4 , 8 , img , True)[0] 
 			vol_per = length / 350 * 100 
 			self.set_volumn(vol_per)

@@ -24,8 +24,11 @@ class MouseController :
         # check if hand was detected 
         if len(lm) != 0 : 
             fingers = self.detector.fingersUp()
-            if fingers[1] != 0 : 
 
+            #see if index finger is up
+            # if true enter moving mode 
+            if fingers[1] != 0 : 
+            
                 x1 , y1 = lm[8][1:] 
                 cv2.circle(img , (x1 , y1) , 15 , (0 , 0 , 255) , cv2.FILLED)
                 
@@ -35,16 +38,19 @@ class MouseController :
                 x1 = np.interp(x1 , [self.frameR , self.wCam - self.frameR] , [0 , wScr])
                 y1 = np.interp(y1 , [self.frameR , self.hCam - self.frameR] , [0 , hScr])
 
+                #see if middle finger is also up 
+                #if true enter click mode 
                 if fingers[2] == 0 :
 
                     try :
+
                         self.cur_x = self.pre_x + (x1 - self.pre_x) / self.smooth
                         self.cur_y = self.pre_y + (y1 - self.pre_y) / self.smooth
-
                         self.pre_x = self.cur_x 
                         self.pre_y = self.cur_y
 
                         autopy.mouse.move(self.cur_x , self.cur_y)
+
                     except ValueError : 
                         pass 
                 else : 
@@ -53,7 +59,7 @@ class MouseController :
 
                     length , img , points = self.detector.findDistance(12 , 8 , img , True)
 
-                    if length < 30 : 
+                    if length < 40 : 
                         autopy.mouse.click()
                         cv2.circle(img , points[4:], 15 , (0 , 0 , 255) , cv2.FILLED)
                     
