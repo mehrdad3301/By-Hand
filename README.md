@@ -25,4 +25,7 @@ There are two modes. moving and clicking. When There's only index up MouseContro
 * [autopy](https://github.com/autopilot-rs/autopy)
 
 ## Contribution 
+This project was created for educational purposes, hence there isn't much to it. However if you had ideas, Feel free to contribute.  
+
 ## Acknowledgments
+This was inspired by Murtaza's workshop. I'm using his HandTrackingModule which can be found [here](https://www.computervision.zone/courses/gesture-volume-control/).</br> You can follow Murtaza on Youtube and Github. 
