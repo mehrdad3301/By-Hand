@@ -7,14 +7,14 @@ The project is on Volumn by deafault. In order to change that you will only need
 # Volumn 
 VolumnController uses HandTrackingModule to find the distance between index and thumb. It then uses set_volumn method to change the volumn. However This method only works on Linux. Refer to Acknowledgments for help.
 <p align="center">
-    <img src='img/volumn.gif' width='450'/> 
+    <img src='img/volumn.gif' width='480'/> 
 </p>
 
 
 # Mouse 
 There are two modes. moving and clicking. When There's only index up MouseController enters moving mode. It creates a Rectangle for us to move our finger in and calculates relative coordinates to move the mouse. If both middle and index are up, We are in clicking mode. It waits until index and middle tips touch then clicks.</br>
 <p align="center">
-    <img src='img/mouse.gif' width='450'/> 
+    <img src='img/mouse.gif' width='640'/> 
 </p>
 
 
